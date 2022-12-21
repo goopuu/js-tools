@@ -67,66 +67,6 @@ function calc(num1, num2, opt)
 }
 
 /**
- * 计算两个数相加
- * @param {*} num1 
- * @param {*} num2 
- * @returns 
- */
-function _calcAdd(num1, num2)
-{
-    let realNum1Obj = _getIntNum(num1)
-    let realNum2Obj = _getIntNum(num2)
-    let exp = Math.pow(10, +(realNum1Obj.exp + realNum2Obj.exp))
-
-    return +(num1 * exp + num2 * exp) / exp
-}
-
-/**
- * 计算两个数相减
- * @param {*} num1 
- * @param {*} num2 
- * @returns 
- */
-function _calcSub(num1, num2)
-{
-    let realNum1Obj = _getIntNum(num1)
-    let realNum2Obj = _getIntNum(num2)
-    let exp = Math.pow(10, +(realNum1Obj.exp + realNum2Obj.exp))
-
-    return +(num1 * exp - num2 * exp) / exp
-}
-
-/**
- * 计算两个数相乘
- * @param {*} num1 
- * @param {*} num2 
- * @returns 
- */
-function _calcMulti(num1, num2)
-{
-    let realNum1Obj = _getIntNum(num1)
-    let realNum2Obj = _getIntNum(num2)
-    let exp = Math.pow(10, +(realNum1Obj.exp + realNum2Obj.exp))
-
-    return +(realNum1Obj.intNumber * realNum2Obj.intNumber) / exp
-}
-
-/**
- * 计算两个数相除
- * @param {*} num1 
- * @param {*} num2 
- * @returns 
- */
-function _calcDiv(num1, num2)
-{
-    let realNum1Obj = _getIntNum(num1)
-    let realNum2Obj = _getIntNum(num2)
-    let exp = Math.pow(10, Math.abs(+(realNum1Obj.exp - realNum2Obj.exp)))
-
-    return round(+(realNum1Obj.intNumber / realNum2Obj.intNumber) * exp)
-}
-
-/**
  * 检测并返回数字类型
  * @param {numeric} num 
  * @returns 
@@ -207,4 +147,64 @@ function _getDecimalIndex(num)
     let realNum = checkNum(num) + ""
 
     return +realNum.indexOf(".")
+}
+
+/**
+ * 计算两个数相加
+ * @param {*} num1 
+ * @param {*} num2 
+ * @returns 
+ */
+function _calcAdd(num1, num2)
+{
+    let realNum1Obj = _getIntNum(num1)
+    let realNum2Obj = _getIntNum(num2)
+    let exp = Math.pow(10, +(realNum1Obj.exp + realNum2Obj.exp))
+
+    return +(num1 * exp + num2 * exp) / exp
+}
+
+/**
+ * 计算两个数相减
+ * @param {*} num1 
+ * @param {*} num2 
+ * @returns 
+ */
+function _calcSub(num1, num2)
+{
+    let realNum1Obj = _getIntNum(num1)
+    let realNum2Obj = _getIntNum(num2)
+    let exp = Math.pow(10, +(realNum1Obj.exp + realNum2Obj.exp))
+
+    return +(num1 * exp - num2 * exp) / exp
+}
+
+/**
+ * 计算两个数相乘
+ * @param {*} num1 
+ * @param {*} num2 
+ * @returns 
+ */
+function _calcMulti(num1, num2)
+{
+    let realNum1Obj = _getIntNum(num1)
+    let realNum2Obj = _getIntNum(num2)
+    let exp = Math.pow(10, +(realNum1Obj.exp + realNum2Obj.exp))
+
+    return +(realNum1Obj.intNumber * realNum2Obj.intNumber) / exp
+}
+
+/**
+ * 计算两个数相除
+ * @param {*} num1 
+ * @param {*} num2 
+ * @returns 
+ */
+function _calcDiv(num1, num2)
+{
+    let realNum1Obj = _getIntNum(num1)
+    let realNum2Obj = _getIntNum(num2)
+    let exp = Math.pow(10, Math.abs(+(realNum1Obj.exp - realNum2Obj.exp)))
+
+    return round(+(realNum1Obj.intNumber / realNum2Obj.intNumber) * exp)
 }
