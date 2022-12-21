@@ -88,8 +88,9 @@ function _getIntNum(num)
     let result = { intNumber: 0, exp: 0 }
     let realNum = checkNum(num)
     realNum += ""
-    let decimalIndex = _getDecimalIndex(realNum) + 1
+    let decimalIndex = _getDecimalIndex(realNum)
     if (decimalIndex >= 0) {
+        decimalIndex += 1
         let exp = realNum.slice(decimalIndex).length
         let multi = Math.pow(10, exp)
         result.intNumber = realNum * multi
